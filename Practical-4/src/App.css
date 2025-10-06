@@ -1,0 +1,58 @@
+.Counter {
+  text-align: center;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #fce4ec);
+  min-height: 100vh;
+  color: #333;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 22px;
+  margin: 10px 0;
+  color: #444;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 8px;
+  border: none;
+  background-color: #00796b;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  border: 2px solid #00796b;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #004d40;
+}
+
+lable {
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+
