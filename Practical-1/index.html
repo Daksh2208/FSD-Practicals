@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+
+    <style>
+        body{
+            font-size: 18px;
+            text-align: center;;
+        }
+
+        .Vote{
+            font-size: 18px;
+            margin-top: 10px;
+        
+        }
+
+        button{
+            height: 30px;
+            border-radius: 5px;
+            border-width: 1px;
+            width: 80px;
+            margin:  10px;
+        }
+
+        .x{
+            margin-top: 5px;
+        }
+
+        
+
+        
+    </style>
+</head>
+<body>
+    
+    <h1 class="title">Vote for Your Favorite Language</h1>
+
+    <button type="button" onclick="vote('JavaScript')">JavaScript</button>
+    <button type="button" onclick="vote('Python')" >Python</button>
+    <button type="button" onclick="vote('Java')" >Java</button>
+
+<div class="Vote">
+    <div id="js"  class="x"></div>
+    <div id="py" class="x"></div>
+    <div id="java" class="x"></div>
+</div>
+
+
+   <script src="index.js"></script>
+</body>
+</html>
