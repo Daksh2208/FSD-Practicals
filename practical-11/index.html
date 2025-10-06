@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chatter — Sign in / Sign up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="authView" class="auth card">
+  <div class="logo" style="margin-bottom:12px"><span class="dot"></span> <span>Chatter</span></div>
+  <h2 id="authTitle">Create account</h2>
+  <div class="group" id="nameGroup"><label>Name</label><input id="nameInput" placeholder="Ada Lovelace"/></div>
+  <div class="group"><label>Email</label><input id="emailInput" type="email" placeholder="ada@chatter.app"/></div>
+  <div class="group"><label>Password</label><input id="passwordInput" type="password" placeholder="••••••••"/></div>
+  <div class="group"><button class="btn primary full" id="authSubmit">Sign up</button></div>
+  <div class="group"><button class="btn full" id="googleBtn">Continue with Google</button></div>
+  <div class="switch" id="authSwitch">Already have an account? <a href="#" id="toLogin">Sign in</a></div>
+  <p class="muted" style="margin-top:8px">This page uses your config in <code>firebase-config.js</code>.</p>
+</div>
+
+<script type="module" src="auth.js"></script>
+</body>
+</html>
