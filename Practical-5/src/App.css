@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.calculator {
+  width: 90vw;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.display {
+  background: transparent;
+  padding: 20px;
+  text-align: right;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+}
+
+.input {
+  font-size: 2rem;
+  color: #f3f3f3;
+  min-height: 2rem;
+}
+
+.result {
+  font-size: 3rem;
+  color: #7affcb;
+  opacity: 0.8;
+  min-height: 1.2rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+button {
+  padding: 25px;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+button:active {
+  transform: scale(0.95);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+button:nth-child(n+1):nth-child(-n+4),  /* C, DEL, /, * */
+button:nth-child(16) {                 /* = */
+  background-color: #ff4081;
+  color: white;
+  font-weight: bold;
+}
