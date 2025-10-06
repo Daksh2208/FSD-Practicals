@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Colorful Resume Upload</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Upload Your Resume (PDF)</h2>
+    <form id="uploadForm">
+        <input type="file" id="resumeFile" name="resume" accept=".pdf" required>
+        <label for="resumeFile" class="file-input-label">
+            <span class="file-input-icon"></span>
+            <span class="file-input-text">Choose PDF File</span>
+        </label>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="message"></div>
+</div>
+
+
+<script>
+const form = document.getElementById('uploadForm');
+const message = document.getElementById('message');
+const fileInput = document.getElementById('resumeFile');
+const fileInputText = document.querySelector('.file-input-text');
+
+// Update label text when file is selected
+fileInput.addEventListener('change', (e) => {
+    if (e.target.files.length > 0) {
+        const fileName = e.target.files[0].name;
+        fileInputText.textContent = fileName;
+    } else {
+        fileInputText.textContent = 'Choose PDF File';
+    }
+});
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fileInput = document.getElementById('resumeFile');
+    if (!fileInput.files.length) return;
+
+    const formData = new FormData();
+    formData.append('resume', fileInput.files[0]);
+
+    message.textContent = 'Uploading...';
+    message.className = 'uploading';
+
+    try {
+        const res = await fetch('/upload', { method: 'POST', body: formData });
+        const data = await res.json();
+
+        if (data.success) {
+            message.textContent = data.message;
+            message.className = 'success';
+        } else {
+            message.textContent = data.message;
+            message.className = 'error';
+        }
+    } catch {
+        message.textContent = 'Network error';
+        message.className = 'error';
+    }
+});
+</script>
+</body>
+</html>

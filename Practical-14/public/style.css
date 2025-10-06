@@ -1,0 +1,105 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1f2937, #4b5563, #6b7280); /* Dark professional gradient */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    background: #ffffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    width: 350px;
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #111827; /* dark slate */
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #3b82f6; /* Blue accent */
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #3b82f6;
+    font-weight: bold;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    background-size: 200% 100%;
+    animation: gradientMove 3s linear infinite;
+}
+
+.file-input-label:hover {
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    color: #ffffffff;
+    border-color: #1d4ed8;
+}
+
+.file-input-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.file-input-text {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    display: inline-block;
+}
+
+button {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7); /* Strong blue gradient */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+    transform: translateY(-3px);
+}
+
+#message {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.success { background-color: #16a34a; color: #fff; }  /* green */
+.error { background-color: #b91c1c; color: #fff; }    /* red */
+.uploading { background-color: #f59e0b; color: #fff; } /* amber */
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

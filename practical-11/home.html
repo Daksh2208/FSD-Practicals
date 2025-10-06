@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chatter — Minimal Social Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="appView" class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="logo"><span class="dot"></span><span>Chatter</span></div>
+    <div class="card user-card">
+      <img id="meAvatar" src="https://api.dicebear.com/9.x/thumbs/svg?seed=me" alt="me">
+      <div>
+        <div id="meName" style="font-weight:600">—</div>
+        <div id="meEmail" class="muted">—</div>
+      </div>
+    </div>
+
+    <div class="card search">
+      <input id="userSearch" placeholder="Search users by name/email"/>
+      <button class="btn" id="inviteBtn">+</button>
+    </div>
+
+    <div class="nav card">
+      <div class="item active" id="navChats">💬 Chats</div>
+      <div class="item" id="navPeople">👥 People</div>
+      <div class="item" id="navProfile">🙍 Profile</div>
+      <div class="item" id="navLogout">🚪 Logout</div>
+    </div>
+
+    <div class="card" style="padding:8px;">
+      <div class="muted" style="padding:8px 8px 0">Recent chats</div>
+      <div class="chats" id="recentList"></div>
+    </div>
+
+    <div class="muted" style="padding:8px;text-align:center">Built with Firebase</div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="title">
+        <div class="menu"><button class="btn ghost" id="toggleSidebar">☰</button></div>
+        <div><strong id="chatTitle">Welcome</strong><div id="chatSub" class="muted" style="font-size:.9rem">Select a conversation or find people to start chatting.</div></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="messages" id="messages"></div>
+      <div class="composer" id="composer" hidden>
+        <textarea id="messageInput" placeholder="Type a message…"></textarea>
+        <button class="btn primary" id="sendBtn">Send</button>
+      </div>
+      <div class="empty" id="emptyState"><div class="pill">No chat selected</div></div>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="home.js"></script>
+</body>
+</html>

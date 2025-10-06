@@ -1,0 +1,17 @@
+{
+  "name": "product-site-backend",
+  "version": "1.0.0",
+  "description": "Proof of concept Express backend for product site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
