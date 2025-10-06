@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Library Portal - Profile</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Library Portal Profile</h1>
+      <p>Welcome back to your personal library dashboard</p>
+    </div>
+    <div class="user-info">
+      <h2>Hello, <%= user.name %>!</h2>
+      <p><strong>Login Time:</strong> <%= user.loginTime.toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Kolkata' }) %></p>
+    </div>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </div>
+</body>
+</html>

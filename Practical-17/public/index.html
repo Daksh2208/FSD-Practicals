@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tuition Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tuition Admin Panel</h1>
+    <hr>
+    
+    <h2>Add Student</h2>
+    <input type="text" id="name" placeholder="Name">
+    <input type="number" id="age" placeholder="Age">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="course" placeholder="Course">
+    <button onclick="addStudent()">Add</button>
+
+    <h2>Students List</h2>
+    <table id="studentsTable">
+        <thead>
+            <tr><th>Name</th><th>Age</th><th>Email</th><th>Course</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        async function fetchStudents() {
+            const res = await fetch('/api/students');
+            const students = await res.json();
+            const tbody = document.querySelector('#studentsTable tbody');
+            tbody.innerHTML = '';
+            students.forEach(s => {
+                tbody.innerHTML += `
+                    <tr data-id="${s._id}">
+                        <td><input value="${s.name}" disabled/></td>
+                        <td><input value="${s.age}" disabled/></td>
+                        <td><input value="${s.email}" disabled/></td>
+                        <td><input value="${s.course}" disabled/></td>
+                        <td>
+                            <button class="edit-btn" onclick="editStudent(this)">Edit</button>
+                            <button class="save-btn" onclick="saveStudent(this)" style="display:none;">Save</button>
+                            <button onclick="deleteStudent('${s._id}')">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        async function addStudent() {
+            const student = {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                email: document.getElementById('email').value,
+                course: document.getElementById('course').value
+            };
+            await fetch('/api/students', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(student)
+            });
+            fetchStudents();
+        }
+
+        function editStudent(button) {
+            const row = button.closest('tr');
+            const inputs = row.querySelectorAll('input');
+            inputs.forEach(input => input.disabled = false);
+            button.style.display = 'none';
+            row.querySelector('.save-btn').style.display = 'inline-block';
+        }
+
+        async function saveStudent(button) {
+            const row = button.closest('tr');
+            const id = row.getAttribute('data-id');
+            const inputs = row.querySelectorAll('input');
+            const updatedStudent = {
+                name: inputs[0].value,
+                age: inputs[1].value,
+                email: inputs[2].value,
+                course: inputs[3].value
+            };
+            await fetch(`/api/students/${id}`, {
+                method: 'PUT',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(updatedStudent)
+            });
+            inputs.forEach(input => input.disabled = true);
+            button.style.display = 'none';
+            row.querySelector('.edit-btn').style.display = 'inline-block';
+        }
+
+        async function deleteStudent(id) {
+            await fetch(`/api/students/${id}`, { method: 'DELETE' });
+            fetchStudents();
+        }
+
+        fetchStudents();
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+/* Library-themed UI styles */
+body {
+  font-family: 'Georgia', serif; /* Bookish font */
+  background: linear-gradient(135deg, #4a90e2, #357abd); /* Blue gradient for library feel */
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  background: #fff;
+  padding: 40px 50px;
+  max-width: 450px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  border: 2px solid #e0e0e0;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 2.2rem;
+}
+
+.header p {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-align: left;
+  color: #34495e;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border: 2px solid #bdc3c7;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #27ae60, #2ecc71); /* Green for login */
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #229954, #27ae60);
+  transform: translateY(-2px);
+}
+
+.error {
+  background: #e74c3c;
+  color: white;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.user-info {
+  background: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.logout-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b); /* Red for logout */
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  transform: translateY(-2px);
+}

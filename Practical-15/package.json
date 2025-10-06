@@ -1,0 +1,19 @@
+{
+  "name": "practical---15",
+  "version": "1.0.0",
+  "description": "A simple web application built with **Express.js** that simulates user login/logout functionality by tracking user sessions. When users log in, their name and login time are stored in a session, which can be viewed on a profile page. Users can also log out, which destroys their session.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2"
+  }
+}
